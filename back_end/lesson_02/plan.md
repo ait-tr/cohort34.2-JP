@@ -1,4 +1,6 @@
 
 * Разбор ДЗ
-* Three tier architecture 
+* Three tier architecture: repository, service, controller
+* Maven intro
+
 

@@ -1,0 +1,9 @@
+Account
+    Long id;
+    String iban;
+    double balance;
+    Person owner;
+
+Person
+    Long id
+    String name;

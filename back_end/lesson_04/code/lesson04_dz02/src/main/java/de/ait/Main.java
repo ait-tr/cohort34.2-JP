@@ -1,8 +1,10 @@
-import model.User;
-import repositories.FileUserRepositoryImpl;
-import repositories.UserCrudRepository;
-import service.UserService;
-import service.UserServiceImpl;
+package de.ait;
+
+import de.ait.model.User;
+import de.ait.repositories.FileUserRepositoryImpl;
+import de.ait.repositories.UserCrudRepository;
+import de.ait.service.UserService;
+import de.ait.service.UserServiceImpl;
 
 import java.util.Scanner;
 
@@ -12,6 +14,11 @@ public class Main {
         UserCrudRepository repository = new FileUserRepositoryImpl("1.txt");
         UserService service = new UserServiceImpl(repository);
         Scanner scanner = new Scanner(System.in);
+
+        User u1 = User.builder()
+                .email("qwer@mail.ru")
+                .name("qwer")
+                .build();
 
         /*
         repository.save(new User(1L,"2", "retyu"));

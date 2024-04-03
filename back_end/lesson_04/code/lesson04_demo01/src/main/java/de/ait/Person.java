@@ -1,13 +1,15 @@
 package de.ait;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 @AllArgsConstructor
 @ToString
 @Getter
+@NoArgsConstructor
+@Setter
 public class Person {
     private String name;
     private  int age;
+
+
 }

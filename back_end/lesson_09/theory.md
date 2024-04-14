@@ -73,4 +73,4 @@ public class AppConfiguration {
 
 # DTO
 ** DTO (Data Transfer Object) **  
-<img src="\pic\User.png"/>
+<img src="pic\User.png"/>

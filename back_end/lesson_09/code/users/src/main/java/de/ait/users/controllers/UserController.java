@@ -1,6 +1,6 @@
 package de.ait.users.controllers;
 
-import de.ait.users.dto.UserRequestDTO;
+import de.ait.users.dto.UserResponseDTO;
 import de.ait.users.model.User;
 import de.ait.users.services.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -30,8 +30,8 @@ public class UserController {
     // localhost:8080/users?age=10
 
     @GetMapping
-    public List<UserRequestDTO> getAllUsers(@RequestParam(required = false, defaultValue = "0") int age,
-                                            @RequestParam(required = false) String name){
+    public List<UserResponseDTO> getAllUsers(@RequestParam(required = false, defaultValue = "0") int age,
+                                             @RequestParam(required = false) String name){
         System.out.println(name);
         return service.findAll(age);
     }

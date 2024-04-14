@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @ToString
 @Builder
 @Schema(name = "User", description = "Пользователь системы")
-public class UserRequestDTO {
+public class UserResponseDTO {
     @Schema(description = "id пользователя", example = "234")
     private Long id;
     @Schema(description = "имя пользователя", example = "andy")
@@ -25,16 +25,16 @@ public class UserRequestDTO {
     @Schema(description = "возраст пользователя", example = "43")
     private int age;
 
-    public static UserRequestDTO from(User user){
-        return UserRequestDTO.builder()
+    public static UserResponseDTO from(User user){
+        return UserResponseDTO.builder()
                 .id(user.getId())
                 .age(user.getAge())
                 .name(user.getName())
                 .email(user.getEmail())
                 .build();
     }
-    public static List<UserRequestDTO> from(List<User> users){
-        return users.stream().map(UserRequestDTO::from).collect(Collectors.toList());
+    public static List<UserResponseDTO> from(List<User> users){
+        return users.stream().map(UserResponseDTO::from).collect(Collectors.toList());
     }
 
 }

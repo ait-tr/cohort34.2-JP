@@ -1,12 +1,11 @@
 package de.ait.users.services.impl;
 
-import de.ait.users.dto.UserRequestDTO;
+import de.ait.users.dto.UserResponseDTO;
 import de.ait.users.model.User;
 import de.ait.users.repositories.UserRepository;
 import de.ait.users.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,16 +23,16 @@ public class UserServiceImpl implements UserService {
     private final Scanner scanner;
 
     @Override
-    public List<UserRequestDTO> findAll() {
-        return UserRequestDTO.from(repository.findAll());
+    public List<UserResponseDTO> findAll() {
+        return UserResponseDTO.from(repository.findAll());
     }
 
     @Override
-    public List<UserRequestDTO> findAll(int age) {
+    public List<UserResponseDTO> findAll(int age) {
         if(age==0) {
             return findAll();
         } else {
-            return  UserRequestDTO.from(repository.findAll()).stream().filter(u->u.getAge()==age).collect(Collectors.toList());
+            return  UserResponseDTO.from(repository.findAll()).stream().filter(u->u.getAge()==age).collect(Collectors.toList());
         }
 
     }

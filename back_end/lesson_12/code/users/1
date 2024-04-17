@@ -1,0 +1,7 @@
+// DiIoc
+
+//myserver.com/
+
+1. создаем Controller  (@RestController)
+2. создать метод getOrders  @GetMapping("/orders")
+3. Внедрить Service и реализовать  метод getOrders

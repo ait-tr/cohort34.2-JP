@@ -23,7 +23,7 @@
 в *Bidirectional OneToMany|ManyToOne отношение* это сущность "Один"(Client)
 
 ### Реализация в Java
-<img src="..\pic\1.jpg">
+<img src="https://github.com/ait-tr/cohort34.2-JP/blob/main/back_end/lesson_14/pic/1.jpg">
 
 ### В классе "Много" (Card) @ManyToOne:
 

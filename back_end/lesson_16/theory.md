@@ -129,12 +129,12 @@ Spring позволяет создать класс, в котором собр�
 1. В нем размещаем методы-обработчики, используя аннотацию  @ExceptionHandler(Exception.class)
 
 ~~~java
-@ControllerAdvice
-public class AdviceController {
-    @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Client Not Found")
-    public class ClientNotFoundException extends RuntimeException {
-        public SecondTestException(String message) {
-            super(message);
+    @ControllerAdvice
+    public class AdviceController {        
+        
+        @ExceptionHandler(Exception.class)
+        public ResponseEntity<ApiError> handleException(FirstTestException e) {
+            ApiError apiError = new ApiError(ex.getMessage(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(apiError, HttpStatus.BAD_REQUEST);
         }
-    }
 ~~~
